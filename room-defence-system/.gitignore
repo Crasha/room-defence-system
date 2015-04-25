@@ -1,0 +1,7 @@
+capture.pgm
+haarcascade_frontalface_alt2.xml
+haarcascade_frontalface_alt.xml
+mean.png
+negative_eigenface.png
+positive_eigenface.png
+*.pyc
