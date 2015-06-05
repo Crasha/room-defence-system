@@ -20,6 +20,7 @@ import config, face, hardware
 #from DoorSystem.facerec import config, face, hardware
 
 import cv2
+import subprocess
 
 class UIController(Control.Controller):
     def __init__(self,model):
@@ -38,6 +39,10 @@ greenPin = 25
 redPin = 24
 
 gunPin = 10
+
+welcomeAudioFile = "welcome.mp3"
+intruderAudioFile = "intruder.mp3"
+sorryAudioFile = "sorry.mp3"
 
 class UI(Observer.Observer):
 
@@ -104,6 +109,7 @@ class UI(Observer.Observer):
             if result is None:
                 print 'Could not detect single face!  Check the image in capture.pgm' \
                         ' to see what was captured and try again with only one face visible.'              	
+                self.playAudio( sorryAudioFile )
                 self.controllable.failAuth()
             else:
                 GPIO.output(lightPins, 0)
@@ -123,9 +129,11 @@ class UI(Observer.Observer):
                       confidence)
                 if label == config.POSITIVE_LABEL and confidence < config.POSITIVE_THRESHOLD:
                   print 'Recognized face!'
+                  self.playAudio( welcomeAudioFile )
                   self.controllable.acceptAuth()
                 else:
-                  print 'Did not recognize face!'	
+                  print 'Did not recognize face!'
+                  self.playAudio( intruderAudioFile )	
                   self.controllable.rejectAuth()		
 
         elif observable.currentState.authState != AuthStates.Assess:
@@ -179,3 +187,6 @@ class UI(Observer.Observer):
     def fireOff(self):    
 	GPIO.output(gunPin,0)  
 
+    def playAudio(self, file):
+        cmd = ['mplayer', '-slave', '-quiet', file]
+	p = subprocess.Popen(cmd, stdout=subprocess.PIPE, stdin=subprocess.PIPE)
