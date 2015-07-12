@@ -46,3 +46,17 @@ Once software has been built, installed, configured and trained you can run the 
 sudo runSystem.sh
 ```
 This could be run in a terminal, but would be best run under a ['screen'](http://www.gnu.org/software/screen/manual/screen.html) session (which can be detached later), or launched from /etc/rc.local at boot, or launched as a system service.
+
+## Speech Output
+
+Not shown on the schematics, but shown at the end of the video: I've added a cheap mobile-phone speaker and modified the Python code to play different sounds or phrases for recognised or unrecognised faces, or when no obvious face can be detected.
+
+Here is a one-liner shell function to get Google Translate to speak any text phrase nicely, returning the result as an MP3.
+```
+speak()  { curl -G --user-agent "Mozilla/5.0" "http://translate.google.com/translate_tts" --data "tl=en" --data-urlencode "q=$1"; }
+```
+
+And here is how to use it...
+```
+speak "You  don't even look human." > sorry.mp3
+```
