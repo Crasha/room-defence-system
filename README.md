@@ -33,11 +33,11 @@ git clone https://github.com/tdicola/pi-facerec-box
 cd pi-facerec-box
 git reset --hard 10f7f29ba08695c5b6ef79ff2b87503303350644
 ```
-The "git reset" command will ensure you get the particular version (commit) that has been used (the latest commit at the time of writing). If at any point you want to get the very latest version of Toni's project, use "git pull".  
+The "git reset" command will ensure you get the particular version (commit) that has been used (the latest commit at the time of writing). If at any point you want to get the very latest version of Tony's project, use "git pull".  
 
 You are now ready to follow [Tony DiCola's instructions](https://learn.adafruit.com/raspberry-pi-face-recognition-treasure-box/software) for building and installing the required software. I built, installed and used OpenCV v2.4.10 successfully in my room-defence-system.
 
-Follow Toni's OpenCV training and configuration guide.  
+Follow Tony's OpenCV training and configuration guide.  
 You can alter pi-facerec-box/config.py to change BUTTON_PIN from 25 to a more appropriate value (BUTTON_PIN = 2 allowed the user-panel button in my setup to be used to trigger training runs)
 I also altered the POSITIVE_THRESHOLD value (to 3300.0) in order to make recognition of positive faces more likely.  
 
