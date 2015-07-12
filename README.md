@@ -5,8 +5,8 @@ This project works in conjunction with Tony DiCola's Raspberry Pi powered box wh
 
 The software depends on a particular hardware setup, which includes a Raspberry Pi camera, GPIO lines connected to buttons and LEDs. The complete system is able to protect a room by checking faces and activating defences when an unrecognised intruder is detected.
 
-Intro video
-https://www.youtube.com/watch?v=UiDus-EdKdw 
+Project video on YouTube : https://youtu.be/M46sbWSLWv8 
+----
 
 ----
 
