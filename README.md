@@ -18,7 +18,7 @@ My setup uses a Gertboard to control the servo-motor that pulls the Nerf gun tri
 The ino file in [this folder](servoController/dtServoGun2) is the Atmega328 source code for activating the servo on receipt of a simple 3v3 signal from the Raspberry Pi. The code is suitable for Gertboard, Arduino and similar devices (e.g. Adafruit Pro Trinket 3v 12Mhz).  
 It may have been simpler to tape the trigger and just switch power to the gun on and off, but I wanted the challenge of triggering the gun with a servo-motor. My servo is secured next to the Nerf gun trigger using Lego Technic. There are many other approaches that would work equally well.  
 [Gordon @ Drogon](https://projects.drogon.net/raspberry-pi/gertboard/arduino-ide-installation-isp/) has produced some excellent material to help you when developing code for the Gertboard's Atmega328 chip.  
-[Tony DiCola's pi-facerec-box project pages](https://github.com/tdicola/pi-facerec-box) link to other useful hardware resources. This room-defence-system project uses a different hardware setup, but depends on all the good work Toni put into harnessing OpenCV software for face recognition. Software setup is described below.
+[Tony DiCola's pi-facerec-box project pages](https://github.com/tdicola/pi-facerec-box) link to other useful hardware resources. This room-defence-system project uses a different hardware setup, but depends on all the good work Tony put into harnessing OpenCV software for face recognition. Software setup is described below.
 
 ## Software Setup Instructions
 
